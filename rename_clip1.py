@@ -38,6 +38,22 @@ class RenameClip:
             print("Directory [{}] is clear.".format(self._path))
         print("Rename End.")
 
+
+def rename(path, src, dest):
+    src_file = path + '\\' + src
+    dest_file = path + '\\' + dest
+    try:
+        if not os.path.exists(dest_file):
+            print("move to {}".format(dest_file))
+            shutil.move(src_file, dest_file)
+        else:
+            print("file exists:{}".format(dest_file))
+    except Exception as e:
+        print("{}".format(e))
+    else:
+        print("Rename End.")
+
+
 def main():
     clip = RenameClip(path="D:\\jared\\Downloads", b_path="D:\\jared\\Videos\\bilibili")
     try:
@@ -51,3 +67,4 @@ def main():
 # 使用B站下载助手,下载的视频需要改名+移动到相应的文件夹中.
 if __name__ == '__main__':
     main()
+    # rename('D:\\jared\\Videos', 'videoplayback.mp4', 'Family Trip to PoHang_Korea_MarchBlue Poolvila in PoHang.mp4')
