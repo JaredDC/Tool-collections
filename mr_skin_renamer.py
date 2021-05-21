@@ -52,5 +52,4 @@ def main(path):
         
 
 if __name__ == '__main__':
-    path = u"D:\\jared\\erotic\\mr skin\\rename"
-    main(path)
+    main(os.getcwd())
