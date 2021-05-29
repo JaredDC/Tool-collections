@@ -53,6 +53,28 @@ def convertImage():
         os.remove(webpPath + ".webp")
     print("convertImage END.")
 
+def png2ico():
+    import os
+    import PythonMagick	# 该模块需要下载whl进行安装
+    #获取目录下文件名清单
+    files = os.listdir()
+    #对文件名清单里的每一个文件名进行处理
+    for filename in files:
+        portion = os.path.splitext(filename) # portion为名称和后缀分离后的列表
+        if portion[1] ==".png": # 如果为JPG则更改名字
+            newfile = portion[0]+".ico" # 要改的新后缀#改好的新名字
+            # 进行格式转换
+            img = PythonMagick.Image(filename)
+            img.sample('256x256')
+            path = os.path.join(newfile)	
+            img.write(path)
+            print("%s --> %s" % (filename, newfile))  
+
+# ps: download PythonMagick (Unofficial Windows Binaries for Python Extension Packages) 
+#  https://www.lfd.uci.edu/~gohlke/pythonlibs/#pythonmagick
+#     https://download.lfd.uci.edu/pythonlibs/q4trcu4l/PythonMagick-0.9.19-cp38-cp38-win32.whl
+# ps: install PythonMagick (e.g. pip install PythonMagick-0.9.19-cp38-cp38-win32.whl)
 
 # 执行
 convertImage()
+png2ico()
