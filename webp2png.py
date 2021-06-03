@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+# pip install Pillow
 
 # 返回当前工作目录
 CURRENT_PATH = os.getcwd()

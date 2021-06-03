@@ -4,4 +4,5 @@
 ::for /F %%i in ('where python') do (set commitid=%%i)
 ::echo commitid=%commitid%
 python rename_clip1.py 
-pause
+rem delay 3s
+ping -n 3 127.0.0.1 > nul

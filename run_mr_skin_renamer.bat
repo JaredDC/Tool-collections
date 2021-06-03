@@ -1,4 +1,8 @@
 @echo off
-xcopy "D:\jared\coding\bilibili_downloader_renamer\mr_skin_renamer.py" .  /y /q /d
+xcopy "mr_skin_renamer.py" "D:\jared\erotic\mr skin\mr_skin_renamer.py"  /y /q /d
+cd "D:\jared\erotic\mr skin\"
+echo Start to rename mr skin pic_files.
 python mr_skin_renamer.py
-pause
+
+rem delay 4s
+ping -n 4 127.0.0.1 > nul
