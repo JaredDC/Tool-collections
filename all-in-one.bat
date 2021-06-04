@@ -1,7 +1,7 @@
 @echo off
 cd %~dp0
 
-echo webp->png, png->ico
+echo webp2png, png2ico
 python webp2png.py
 
 echo rename clip1...
